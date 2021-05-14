@@ -25,9 +25,9 @@ export default class EventsView extends JetView {
 						$$("events_detalization").adjustRowHeight("body", false);
 					});
 				},
-				// onresize: webix.once(function () {
-				// 	this.adjustRowHeight("body", false);
-				// })
+				onresize: function () {
+					this.adjustRowHeight("body", false);
+				}
 			}
 		};
 	}

@@ -17,13 +17,18 @@ export default class EventsDetalizationView extends JetView {
 			// autoConfig: true,
 			fixedRowHeight: false,
 			select: true,
-			css: "webix_shadow_medium"
+			css: "webix_shadow_medium",
+			on: {
+				onresize: function () {
+					this.adjustRowHeight("body", false);
+				}
+			}
 		};
 	}
-	
+
 	init(_$view, _$) {
 		super.init(_$view, _$);
-		
+
 		_$view.parse(eventsDetalizationCollection.data);
 	}
 }
