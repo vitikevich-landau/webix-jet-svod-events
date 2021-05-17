@@ -10,8 +10,8 @@ export default class EventsView extends JetView {
 			columns: [
 				{id: "id"},
 				{id: "userId"},
-				{id: "title", adjust: "data"},
-				{id: "body", fillspace: true},
+				{id: "title", fillspace: 1},
+				{id: "body", fillspace: 2},
 			],
 			// autoConfig: true,
 			select: true,
@@ -26,7 +26,8 @@ export default class EventsView extends JetView {
 					});
 				},
 				onresize: function () {
-					this.adjustRowHeight("body", false);
+					this.adjustRowHeight("title", true);
+					this.adjustRowHeight("body", true);
 				}
 			}
 		};

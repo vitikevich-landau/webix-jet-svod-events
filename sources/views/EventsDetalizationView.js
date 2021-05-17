@@ -5,14 +5,13 @@ export default class EventsDetalizationView extends JetView {
 	config() {
 		return {
 			id: "events_detalization",
-			gravity: .6,
 			view: "datatable",
 			columns: [
 				{id: "id"},
 				{id: "postId"},
-				{id: "name", adjust: "data"},
+				{id: "name", fillspace: 1},
 				{id: "email", adjust: "data"},
-				{id: "body", fillspace: true},
+				{id: "body", fillspace: 2},
 			],
 			// autoConfig: true,
 			fixedRowHeight: false,
@@ -20,7 +19,11 @@ export default class EventsDetalizationView extends JetView {
 			css: "webix_shadow_medium",
 			on: {
 				onresize: function () {
-					this.adjustRowHeight("body", false);
+					/***
+					 * 	if true, infinity loop
+					 * */
+					this.adjustRowHeight("name", true);
+					this.adjustRowHeight("body", true);
 				}
 			}
 		};
