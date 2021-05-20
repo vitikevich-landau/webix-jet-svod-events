@@ -1,3 +1,5 @@
+import {SERVER_URI} from "../config";
+
 class EventsDetailsCollection {
 	constructor() {
 		this._data = new webix.DataCollection({
@@ -16,7 +18,7 @@ class EventsDetailsCollection {
 	
 	refresh(rn) {
 		this._data.clearAll();
-		return this._data.load(`http://localhost:3000/api/clnevents/${rn}/details`);
+		return this._data.load(`${SERVER_URI}/${rn}/details`);
 	}
 	
 	get data() {
