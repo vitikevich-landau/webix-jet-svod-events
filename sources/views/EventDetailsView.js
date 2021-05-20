@@ -3,23 +3,49 @@ import {eventsDetailsCollection} from "../models/EventsDetailsCollection";
 
 export default class EventDetailsView extends JetView {
 	config() {
+		const css = {"font-weight": "bold"};
 		return {
 			id: "events_details",
 			view: "datatable",
 			columns: [
-				{id: "ROWNUM", header: ["№"], adjust: "data"},
+				{
+					id: "ROWNUM",
+					header: [{text: "№", css}],
+					adjust: "data"
+				},
 				{
 					id: "CHANGE_DATE",
-					header: ["Дата изменения"],
+					header: [{text: "Дата изменения", css}],
 					adjust: "data",
 					template: obj =>
 						webix.Date.dateToStr("%d.%m.%Y")(new Date(obj.CHANGE_DATE))
 				},
-				{id: "SAUTHNAME", header: ["Автор изменения"], adjust: "header"},
-				{id: "SEVENT_STAT", header: ["Статус"], adjust: "data"},
-				{id: "ACTION_NAME", header: ["Действие"], adjust: "data"},
-				{id: "SSEND", header: ["Исполнитель (направить)"], adjust: "data"},
-				{id: "NOTE", header: ["Примечание"], minWidth: 200, fillspace: true },
+				{
+					id: "SAUTHNAME",
+					header: [{text: "Автор изменения", css}],
+					adjust: "header"
+				},
+				{
+					id: "SEVENT_STAT",
+					header: [{text: "Статус", css}],
+					adjust: "data"
+				},
+				{
+					id: "ACTION_NAME",
+					header: [{text: "Действие", css}],
+					adjust: "data"
+				},
+				{
+					id: "SSEND",
+					header: [{text: "Исполнитель (направить)", css}],
+					adjust: "data"
+				},
+				{
+					id: "NOTE",
+					header: [{text: "Примечание", css}],
+					minWidth: 200,
+					fillspace: true
+				},
 			],
 			headermenu: {
 				autoheight: true,

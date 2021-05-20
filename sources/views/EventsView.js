@@ -5,71 +5,74 @@ import {eventsDetailsCollection} from "../models/EventsDetailsCollection";
 
 export default class EventsView extends JetView {
 	config() {
+		const css = {"font-weight": "bold"};
 		return {
 			id: "events",
 			view: "datatable",
 			columns: [
 				{
 					id: "ROWNUM",
-					header: ["№"],
+					header: [{text: "№", css}],
 					adjust: "data",
 					sort: "int",
-					minWidth: 55
+					minWidth: 55,
+
 				},
 				{
 					id: "CATALOG",
-					header: [{text: "Каталог"}],
+					header: [{text: "Каталог", css}],
 					adjust: "data",
 					sort: "string",
+					hidden: true,
 				},
 				{
 					id: "SDOC_PREFNUMB",
-					header: ["Номер заявки", {content: "textFilter"}],
+					header: [{text: "Номер заявки", css}, {content: "textFilter"}],
 					adjust: "header",
 					sort: "string",
 				},
 				{
 					id: "REG_DATE",
-					header: ["Дата создания", {content: "dateRangeFilter", mode: "date"}],
+					header: [{text: "Дата создания", css}, {content: "dateRangeFilter", mode: "date"}],
 					format: webix.i18n.dateFormatStr,
 					minWidth: 220,
 					sort: "date",
 				},
 				{
 					id: "SEVENT_STAT",
-					header: ["Статус заявки", {content: "selectFilter"}],
+					header: [{text: "Статус заявки", css}, {content: "selectFilter"}],
 					adjust: "header",
 					sort: "string",
 				},
 				{
 					id: "PRIORI",
-					header: ["Приоритет заявки"],
+					header: [{text: "Приоритет заявки", css}],
 					adjust: "header",
 					sort: "int",
 				},
 				// {id: "SINIT_PERSON", header: ["Инициатор заявки"], adjust: "data"},
 				{
 					id: "SINIT_PERSON_AGNCODE",
-					header: ["Инициатор заявки", {content: "selectFilter"}],
+					header: [{text: "Инициатор заявки", css}, {content: "selectFilter"}],
 					adjust: "header",
 					sort: "string",
 					hidden: true
 				},
 				{
 					id: "SOWNER_AGENT",
-					header: ["Организация инициатора", {content: "selectFilter"}],
+					header: [{text: "Организация инициатора", css}, {content: "selectFilter"}],
 					sort: "string",
 					adjust: "header"
 				},
 				{
 					id: "SSEND_PERSON_AGNCODE",
-					header: ["Испольнитель", {content: "selectFilter"}],
+					header: [{text: "Исполнитель", css}, {content: "selectFilter"}],
 					adjust: "header",
 					sort: "string",
 				},
 				{
 					id: "SROK",
-					header: ["Срок исполнения", {content: "dateRangeFilter", mode: "date"}],
+					header: [{text: "Срок исполнения", css}, {content: "dateRangeFilter", mode: "date"}],
 					minWidth: 220,
 					sort: "date",
 					adjust: "header",
@@ -77,7 +80,7 @@ export default class EventsView extends JetView {
 				},
 				{
 					id: "EVENT_DESCR",
-					header: ["Описание", {content: "textFilter"}],
+					header: [{text: "Описание", css}, {content: "textFilter"}],
 					minWidth: 280,
 					fillspace: true
 				},
