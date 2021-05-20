@@ -40,6 +40,7 @@ export default class EventsView extends JetView {
 				},
 				{
 					id: "SEVENT_STAT",
+					minWidth: 150,
 					header: [{text: "Статус заявки", css}, {content: "selectFilter"}],
 					adjust: "header",
 					sort: "string",
