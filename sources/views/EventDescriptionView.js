@@ -11,6 +11,10 @@ export default class EventDescriptionView extends JetView {
 				height: "auto",
 			},
 			template: "<code>#EVENT_DESCR#</code>",
+			css: {
+				// "font-weight": "bold"
+				"font-size": "110%"
+			}
 		};
 	}
 
