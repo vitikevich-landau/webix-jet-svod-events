@@ -6,7 +6,7 @@ export default class RecordCounterView extends JetView {
 			view: "template",
 			id: "counter",
 			type: "header",
-			template: "#data#",
+			template: obj => obj.data || "",
 			borderless: true,
 			css: {
 				"font-size": "75%",
