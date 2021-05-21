@@ -22,6 +22,7 @@ export default class EventsView extends JetView {
 					id: "CATALOG",
 					header: [{text: "Каталог", css}],
 					adjust: "data",
+					minWidth: 100,
 					sort: "string",
 					hidden: true,
 				},
