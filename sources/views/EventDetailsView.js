@@ -11,7 +11,8 @@ export default class EventDetailsView extends JetView {
 				{
 					id: "ROWNUM",
 					header: [{text: "№", css}],
-					adjust: "data"
+					adjust: "data",
+					minWidth: 55,
 				},
 				{
 					id: "CHANGE_DATE",
