@@ -1,6 +1,7 @@
 import {JetView} from "webix-jet";
 import EventDetailsView from "jet-views/EventDetailsView";
 import EventDescriptionView from "jet-views/EventDescriptionView";
+import EventAttachmentsView from "jet-views/EventAttachmentsView";
 
 export default class TabbarView extends JetView {
 	config() {
@@ -24,7 +25,7 @@ export default class TabbarView extends JetView {
 						},
 						{
 							value: "<span class='webix_icon wxi-file'></span><span class='padding-right-10'>Прикреплённые документы</span>",
-							id: "t2"
+							id: "event_attachments"
 						}
 					]
 				},
@@ -37,7 +38,7 @@ export default class TabbarView extends JetView {
 					cells: [
 						EventDescriptionView,
 						EventDetailsView,
-						{template: "Прикреплённые докумены...", id: "t2"}
+						EventAttachmentsView
 					]
 				}
 			]
