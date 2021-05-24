@@ -17,14 +17,15 @@ export default class EventDetailsView extends JetView {
 				{
 					id: "CHANGE_DATE",
 					header: [{text: "Дата изменения", css}],
-					adjust: "data",
+					adjust: "header",
 					template: obj =>
 						webix.Date.dateToStr("%d.%m.%y %H:%i")(new Date(obj.CHANGE_DATE))
 				},
 				{
 					id: "SAUTHNAME",
 					header: [{text: "Автор изменения", css}],
-					adjust: "header"
+					adjust: "header",
+					hidden: true
 				},
 				{
 					id: "SEVENT_STAT",
@@ -34,7 +35,9 @@ export default class EventDetailsView extends JetView {
 				{
 					id: "ACTION_NAME",
 					header: [{text: "Действие", css}],
-					adjust: "data"
+					adjust: "data",
+					minWidth: 280,
+					hidden: true
 				},
 				{
 					id: "SSEND",
@@ -53,6 +56,7 @@ export default class EventDetailsView extends JetView {
 				autowidth: true,
 			},
 			// autoConfig: true,
+			resizeColumn: {headerOnly: true, size: 12},
 			fixedRowHeight: false,
 			select: true,
 			on: {
