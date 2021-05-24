@@ -34,6 +34,7 @@ class EventsCollection {
 						json => json.map(v => ({
 							...v,
 							REG_DATE: Utils.parseStrDate(v.REG_DATE),
+							PLAN_DATE: Utils.parseStrDate(v.PLAN_DATE),
 							SROK: Utils.parseStrDate(v.SROK)
 						}))
 					);
