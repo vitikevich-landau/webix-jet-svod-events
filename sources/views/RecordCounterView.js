@@ -3,6 +3,7 @@ import {JetView} from "webix-jet";
 export default class RecordCounterView extends JetView {
 	config() {
 		return {
+			width: 180,
 			view: "template",
 			id: "counter",
 			type: "header",
