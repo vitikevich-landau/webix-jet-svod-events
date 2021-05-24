@@ -2,6 +2,7 @@ import {JetView} from "webix-jet";
 import {eventsCollection} from "../models/EventsCollection";
 import {eventsDescriptionCollection} from "../models/EventDescriptionCollection";
 import {eventsDetailsCollection} from "../models/EventsDetailsCollection";
+import {eventAttachmentsCollection} from "../models/EventAttachmentsCollection";
 
 export default class EventsView extends JetView {
 	config() {
@@ -35,7 +36,7 @@ export default class EventsView extends JetView {
 				{
 					id: "REG_DATE",
 					header: [{text: "Дата создания", css}, {content: "dateRangeFilter", mode: "date"}],
-					format: webix.i18n.dateFormatStr,
+					format: webix.Date.dateToStr("%d.%m.%y %H:%i"),
 					minWidth: 220,
 					sort: "date",
 				},
@@ -113,11 +114,13 @@ export default class EventsView extends JetView {
 					$$("counter").setValues({data: `Количество записей: ${this.data.count()}`});
 				},
 				onAfterSelect: function (obj, preserve) {
-					eventsDescriptionCollection.refresh(this.getItem(obj.row).RN);
-					eventsDetailsCollection.refresh(this.getItem(obj.row).RN)
+					const rn = this.getItem(obj.row).RN;
+					eventsDescriptionCollection.refresh(rn);
+					eventsDetailsCollection.refresh(rn)
 						.then(() => {
 							$$("events_details").adjustRowHeight("NOTE", false);
 						});
+					eventAttachmentsCollection.refresh(rn);
 				},
 				onresize: function () {
 					// this.adjustRowHeight("EVENT_DESCR", true);
