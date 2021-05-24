@@ -49,7 +49,7 @@ export default class EventsView extends JetView {
 				},
 				{
 					id: "PRIORI",
-					header: [{text: "Приоритет заявки", css}],
+					header: [{text: "Приоритет заявки", css}, {content: "selectFilter"}],
 					adjust: "header",
 					sort: "int",
 				},
@@ -74,9 +74,17 @@ export default class EventsView extends JetView {
 					sort: "string",
 				},
 				{
+					id: "PLAN_DATE",
+					header: [{text: "Начало работ", css}, {content: "dateRangeFilter", mode: "date"}],
+					minWidth: 210,
+					sort: "date",
+					adjust: "header",
+					format: webix.i18n.dateFormatStr,
+				},
+				{
 					id: "SROK",
 					header: [{text: "Срок исполнения", css}, {content: "dateRangeFilter", mode: "date"}],
-					minWidth: 220,
+					minWidth: 210,
 					sort: "date",
 					adjust: "header",
 					format: webix.i18n.dateFormatStr,
