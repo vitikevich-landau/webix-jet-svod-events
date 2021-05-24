@@ -19,7 +19,7 @@ export default class EventDetailsView extends JetView {
 					header: [{text: "Дата изменения", css}],
 					adjust: "data",
 					template: obj =>
-						webix.Date.dateToStr("%d.%m.%Y")(new Date(obj.CHANGE_DATE))
+						webix.Date.dateToStr("%d.%m.%y %H:%i")(new Date(obj.CHANGE_DATE))
 				},
 				{
 					id: "SAUTHNAME",
