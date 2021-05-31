@@ -16,16 +16,16 @@ export default class TabbarView extends JetView {
 					optionWidth: "auto",
 					options: [
 						{
-							value: "<span></span><span class='padding-left-right-10'>Описание</span>",
-							id: "event_description"
-						},
-						{
 							value: "<span class='webix_icon wxi-pencil'></span><span class='padding-right-10'>История изменений</span>",
 							id: "events_details",
 						},
 						{
 							value: "<span class='webix_icon wxi-file'></span><span class='padding-right-10'>Прикреплённые документы</span>",
 							id: "event_attachments"
+						},
+						{
+							value: "<span></span><span class='padding-left-right-10'>Описание</span>",
+							id: "event_description"
 						}
 					]
 				},
@@ -36,9 +36,9 @@ export default class TabbarView extends JetView {
 						duration: 250
 					},
 					cells: [
-						EventDescriptionView,
 						EventDetailsView,
-						EventAttachmentsView
+						EventAttachmentsView,
+						EventDescriptionView,
 					]
 				}
 			]
